@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        .rotate{
+            transform: rotate(45deg);
+            transition: transform 0.5s ease-in-out, opacity 0.4s ease;
+        }
+
+        .rotate:hover{
+            transform: rotate(90deg);
+        }
+
+        .translate{
+            transform: translate(50px, 20px);
+        }
+
+        .scale{
+            transform: scale(1.5);
+        }
+
+        .skew{
+            transform: skew(30deg, 0);
+        }
+
+        .translate3d{
+            transform: translate3d(50px, 0, 0);
+        }
+
+        .transform-3d{
+            transform: perspective(500px) rotateX(45deg);
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(25, 129, 220);
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            margin: 20px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .box:hover{
+            transform: scale(1.2) rotate(180deg);
+        }
+
+        .combined{
+            transform: rotate(45deg) translate(50px, 20px) scale(1.5) skew(30deg, 0) translate3d(50px, 0, 0) perspective(500px) rotateX(45deg);
+            transition: transform 0.5s ease-in-out;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(25, 129, 220);
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="rotate box">Rotate</div>
+    <div class="translate box">Translate</div>
+    <div class="scale box">Scale</div>
+    <div class="skew box">Skew</div>
+    <div class="translate3d box">Translate 3d</div>
+    <div class="transform-3d box">3D Transform</div>
+    <div class="box">Hover</div>
+    <div class="combined">Combined</div>
+</body>
+</html>

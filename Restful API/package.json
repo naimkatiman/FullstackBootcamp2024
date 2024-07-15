@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
+  },
+  "scripts": {
+    "test": "echo \\\"Error: no test specified",
+    "start": "node server.js"
+  },
+  "name": "rest-shop",
+  "version": "1.0.0",
+  "main": "app.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "A Node.js Restful API Project FC3"
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book - Flask App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Flask Book Library</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/add">Add Book</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Add Book</h2>
+        <form action="/add" method="post">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" name="genre">
+            <label for="year">Year:</label>
+            <input type="number" id="year" name="year">
+            <label for="is_available">Available:</label>
+            <input type="checkbox" id="is_available" name="is_available">
+            <button type="submit">Add Book</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Flask Book Library</p>
+    </footer>
+</body>
+</html>

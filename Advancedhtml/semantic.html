@@ -1,0 +1,58 @@
+<!-- No-Semantic HTML
+<div id="header">
+    <span class="title"> My Website Title</span>
+</div> -->    
+
+<!--Semantic HTML-->
+
+<!--Header defines a header or intro of your document-->
+<header>
+    <h1>My website Title</h1>
+    <!--Nav defines the navigation menu of your document-->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<!--Section defines a section within your document-->
+<!-- Purpose of 'role' attribute: when we need to explicitly set or override -->
+<section>
+    <h2>Section Title</h2>
+    <button role="button" aria-lable="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</section>
+
+<section>
+    <h2>ARIA Example</h2>
+    <p>This is some content in a section</p>
+</section>
+
+<!--Article defines a self contained piece of content. commonly used for blog posts, new articles/-->
+<article>
+    <h2>Article Title</h2>
+    <p>This is some content in a article</p>
+</article>
+
+<!--Aside-->
+<aside>
+    <h3>Related links</h3>
+    <ol>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+    </ol>
+
+<!--Sidebars or additional information-->
+</aside>
+
+<!-- sidebars or additional information-->
+<footer>
+    <p>&copy;2024 My Website. All rights reserved.</p>
+    <p>Contact <a href="mailto:info@email.com">info@gmail.com</p>
+
+</footer>

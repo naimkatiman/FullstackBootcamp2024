@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px; /*Setting a max width for the content to prevent it from stretching out to much*/
+    margin: 0 auto; /*Centre the containers*/
+}
+
+img{
+    max-width: 15%;
+    height: auto; /*Ensures propotional scaling of image*/
+}
+
+section {
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+    body{
+        font-size: 14px;
+    }
+}

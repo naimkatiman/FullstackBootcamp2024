@@ -1,0 +1,23 @@
+body {
+    background: darkblue;
+}
+
+.container {
+    text-align: center;
+    margin: 50px auto;
+}
+
+#password {
+    font-size: 30px;
+    max-width: 400px;
+    padding: 10px 0px; 
+    border-radius: 10px;
+}
+
+#message {
+    font-size: 30px;
+    color: white;
+    margin-left: -147px; 
+    display: none;
+    
+}

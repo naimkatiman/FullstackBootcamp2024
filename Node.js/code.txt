@@ -1,0 +1,130 @@
+import React, {useState} from "react";
+
+function App() {
+  //hooks
+  const [press, setPress] = useState(0);
+
+  return (
+    <div>
+      <h1>You click the button {press} times</h1>
+      <button onClick={()=>setPress(press +1)}>Click me</button>
+      
+    </div>
+  );
+}
+
+export default App;
+
+...........
+
+
+import React, { useState } from "react";
+
+function App() {
+  //hooks
+  const initialCount = 0;
+  const [count, setCount] = useState(initialCount); 
+
+  const incrementFive = () => {
+    for (let i = 0; i < 5; i++) {
+      setCount(prevCount => prevCount + 1)
+    }
+
+  }
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={() => setCount(initialCount)}>Reset</button>
+      <button onClick={() => setCount(prevCount => prevCount + 1)}>increment</button>
+      <button onClick={() => setCount(prevCount => prevCount - 1)}>decrement</button>
+      <button onClick={incrementFive}>increment 5</button>
+
+
+    </div>
+  );
+}
+
+export default App;
+
+.....
+
+
+import React, { useEffect, useState } from "react";
+
+
+function App() {
+  // Hooks
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    
+    document.title = `You clicked button ${count} times`;
+  }, [count]);
+
+  return (
+    <div>
+      <h1>You clicked the button {count} times</h1>
+    
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  );
+}
+
+export default App;
+
+....
+
+import React, { useEffect, useState } from "react";
+
+function App() {
+  // Hooks
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data);
+      })
+      .catch((e) => {
+        console.log("There is something wrong");
+      });
+  }, []); // Don't forget to add an empty dependency array here to run the effect only once on mount
+
+  // JSX to return
+  return (
+    <div>
+      <h1>List of all the items</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>price</th>
+            <th>description</th>
+            <th>category</th>
+            <th>image</th>
+            <th colSpan={2}>rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((ecom) => (
+            <tr key={ecom.id}> {/* Added key prop */}
+              <td>{ecom.id}</td>
+              <td>{ecom.title}</td>
+              <td>{ecom.price}</td>
+              <td>{ecom.description}</td>
+              <td>{ecom.category}</td>
+              <td><img src={ecom.image} alt={ecom.title} style={{width: "30px"}} /></td>
+              <td>{ecom.rating.rate}</td>
+              <td>{ecom.rating.count}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default App;

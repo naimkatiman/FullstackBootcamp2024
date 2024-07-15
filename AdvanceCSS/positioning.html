@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .static {
+                position: static;
+            }
+
+            .relative {
+                position: relative;
+                top: 20px;
+                left: 20px;
+            }
+
+            .absolute {
+                position: absolute;
+                top: 50px;
+                bottom: 20px;
+            }
+
+            .fixed {
+                position: fixed;
+                /* Additional CSS needed */
+            }
+
+            .sticky {
+                position: sticky;
+                /* Additional CSS needed */
+            }
+
+            .box {
+                height: 100px;
+                background-color: rgba(34, 34, 188, 0.923); 
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+
+            @media screen and (max-width: 768px) {
+                .container {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Positioning and Layout Techniques</h1>
+
+        <div class="static box">Static</div>
+        <div class="relative box">Relative</div>
+        <div class="absolute box">Absolute</div>
+        <div class="fixed box">Fixed</div>
+        <div class="sticky box">Sticky</div>
+    </body>
+</html>

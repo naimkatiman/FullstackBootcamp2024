@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <form>
+        <label for="userInput">Username or Phone:</label>
+        <input type="text" id="userInput">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+        <br>
+        <button type="button" onclick="login()">Login</button>
+    </form>
+
+<script>
+    function login() {
+        let usernameOrPhone = document.getElementById("userInput").value;
+        let password = document.getElementById("password").value;
+
+
+        if ((usernameOrPhone === "0123456789" || usernameOrPhone === "gajah") && password === "terbang") {
+            
+            alert("Login successful!");
+        } else {
+           
+            if (password === "") {
+                console.log("Login failed: Password is required.");
+            } else {
+                console.log("Login failed: Incorrect username, phone, or password.");
+            }
+        }
+    }
+</script>
+</body>
+</html>

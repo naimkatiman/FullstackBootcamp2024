@@ -1,0 +1,13 @@
+
+
+mongosh "mongodb+srv://cluster0.iruuklq.mongodb.net/" --apiVersion 1 --username naimkatiman --password LXlVCl76p2oungXV
+
+mongodb+srv://naimkatiman:<password>@cluster0.iruuklq.mongodb.net/
+
+db.createUser({
+  user: "naim",
+  pwd: "AbcPassword123",
+  roles: [
+    { role: "readWriteAnyDatabase", db: "admin" }
+  ]
+})

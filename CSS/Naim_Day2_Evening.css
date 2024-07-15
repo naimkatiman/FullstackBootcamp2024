@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header div a {
+    color: rgb(9, 13, 235);
+    margin: 0 10px;
+    text-decoration: double;
+}
+
+main {
+    padding: 20px;
+    background-image: url('Datacenter.png');
+    background-size: cover;
+    background-position: center;
+
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header, footer {
+        text-align: left;
+    }
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Assignment</title>
+</head>
+<body>
+    <button id="changeTextBtn">Change Text</button>
+    <p id="textToChange">This text will change when you click the button.</p>
+    
+    <script src="Naim_Javascript_Final_assignment_Day1.js"></script>
+    <script>
+        // Task 4: DOM Manipulation
+        document.getElementById("changeTextBtn").addEventListener("click", function() {
+            document.getElementById("textToChange").innerHTML = "The text has been changed!";
+        });
+    </script>
+</body>
+</html>

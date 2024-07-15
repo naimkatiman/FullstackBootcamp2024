@@ -1,0 +1,34 @@
+jammy (ubuntu user)
+
+sudo apt update
+
+sudo apt install openjdk-17-jdk
+
+cd /mnt/c/Users/naimk/OneDrive\ -\ RWO\ ODRIVE/Desktop/Fullstack\ Course/Apache\ Kafka
+
+cd /mnt/c/Users/naimk/Downloads
+
+cd $HOME/kafka
+
+tar -xvzf ~/Downloads/kafka_2.13-3.7.0.tgz -C ~/ ...................root@Tibyan:/mnt/c/Users/naimk/Downloads
+
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+bin/kafka-server-start.sh config/server.properties
+
+
+pip install confluent_kafka
+
+# Create a virtual environment
+python -m venv env
+
+# Activate the virtual environment
+.\env\Scripts\Activate
+
+pip install kafka
+
+listeners=PLAINTEXT://localhost:9092
+
+\\wsl.localhost\Ubuntu\root\kafka
+
+ps aux | grep kafka (Checking if Kafka is running)

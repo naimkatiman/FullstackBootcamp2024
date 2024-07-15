@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+<style>
+
+    .container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .item{
+        height: 100px;
+        background-color: brown;
+        color: white;
+        text-align: center;
+        line-height: 100px;
+    }
+
+    .auto-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 100px;
+
+    }
+
+    .areas-container {
+        display: grid;
+        grid-template-areas:
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+        gap: 10px;
+
+    }
+
+    .header {
+        grid-area: header;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+    }
+
+    .main {
+        grid-area: main;
+    }
+
+    .footer {
+        grid-area: footer;
+    }
+
+    @media screen and (max-width: 786px) {
+    .container, .auto-container {
+        grid-template-columns: repeat(2, 1fr); /* Adjusts to 2 columns on smaller screens */
+    }
+
+    .areas-container {
+        grid-template-areas:
+            "header header"
+            "sidebar main"
+            "footer footer";
+        /* Adjusts the grid areas for a more linear layout */
+    }
+
+    .item {
+        height: 80px; /* Optionally adjust the height of the items */
+        line-height: 80px;
+    }
+
+    /* If you need to target individual containers for specific styles, 
+       you can add them separately here */
+}
+
+
+</style>
+
+</head>
+
+<body>
+    <h1>CSS Grid Layout</h1>
+    <h2>Advanced Grid Layout</h2>
+
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+    <h2>Auto-placement</h2>
+    <div class="auto-container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+    </div>
+
+    <h2>Grid-Template</h2>
+    <div class="areas-container">
+        <div class="item header">Item 1</div>
+        <div class="item sidebar">Item 2</div>
+        <div class="item main">Item 3</div>
+        <div class="item footer">Item 4</div>
+    </div>
+
+</body>
+</html>

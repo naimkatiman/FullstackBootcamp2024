@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Validation</title>
+    </head>
+
+    <body>
+        <form action="/subscribe" method="post" onsubmit="return validateForm()">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" minlength="8" required>
+
+            <button type="submit">Subscribe</button>
+
+        </form>
+        
+
+        <script>
+            function validateForm(){
+                var email = document.getElementById("email").values;
+                var password = document.getElementById("password").values;
+
+                if(!email.includes("@")){
+                    alert("Please enter a valid email address")
+                    return false;
+
+                }
+                if(password.length < 8){
+                    alert("Password must be at least 8 characters long.")
+                    return false;
+                    
+                }
+            }
+        </script>
+    </body>

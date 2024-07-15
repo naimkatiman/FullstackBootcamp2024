@@ -1,0 +1,32 @@
+links:
+https://nodejs.org/
+
+https://git-scm.com/download/win
+https://getcomposer.org/download/
+gist.github.com/bradtraversy/7485f928e3e8f08ee6bccbe0a681a821
+
+composer create-project --prefer-dist laravel/laravel laravelday
+php artisan migrate
+php artisan db:seed
+composer dump-autoload
+php artisan make:controller PostController
+php artisan make:model Post -m
+php artisan migrate
+php artisan optimize:clear
+
+composer require laravel/ui
+php artisan ui bootstrap --auth
+npm install
+npm run dev
+
+
+php artisan make:migration add_user_id_to_posts_table
+composer require spatie/laravel-permission
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+php artisan migrate
+php artisan make:seeder RolesAndPermissionsSeeder
+php artisan db:seed --class=RolesAndPermissionsSeeder
+
+
+
+

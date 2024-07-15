@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flex Box</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item{
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+        }
+
+        .nested-container{
+            display: flex;
+            gap: 20px;
+        }
+
+        .nested-item{
+            flex: 1;
+            background-color: brown;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .mycontainer{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .myitem{
+            flex: 1 1 200px;
+            background-color: burlywood;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+    </style>
+    
+    </head>
+
+    <body>
+        <h1>Advanced Flexbox Techniques</h1>
+
+        <div class="container">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+
+        <div class="nested-container">
+            <div class="nested-item">Nested Item 1</div>
+            <div class="nested-item">Nested Item 2</div>
+            <div class="nested-item">Nested Item 3</div>
+        </div>
+
+        <h2>More Container</h2>
+
+        <div class="mycontainer">
+            <div class="myitem">My Item 1</div>
+            <div class="myitem">My Item 2</div>
+            <div class="myitem">My Item 3</div>
+        </div>
+    </body>

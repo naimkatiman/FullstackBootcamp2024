@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf 8">
+        <meta name="viewport" content="width=device-width, initial-scale=">
+        <title>List Examples</title>
+
+    </head>
+    <style>
+        /* Element selectors: Style all instances of a particular elements*/
+        p{
+            /* For colour, you have different options */
+            /* RGB rgb (R, G, B) each number 0 - 255 */
+            /* Hexadecimal range from 00-FF eg, b13232 */
+            /* Key words eg. red */
+            color: rgb(100, 0, 0);
+            /* For font size, you can dictate the size in numerous ways */
+            /* Absoulute Units (Pixels) eg. 20px */
+            /* Relative Units (Em or rem) eg. 1.5em */
+            /* Percentage eg. 100% */
+            /* Key words eg. medium */
+            font-size: large;
+        }
+
+    /* Class selectors: Style all instances of a particular class*/
+    .red-box{
+        background-color: #f81010;
+        color: #fff
+        padding: 5px;
+    }
+    
+    /* ID selectors: Style all instances of a particular ID */
+    .header{
+        background-color: #202d93;
+        color: #fff;
+        padding: 5px;
+    }    
+
+    ul > li {
+        list-style-type:square;
+        color: rgba(13o, 34, 23, 42);   
+
+    }
+    </style>
+
+    <body>
+        <h1 class="header">  Creating Lists in HTML</h1>
+
+        <!-- Unodered List-->
+        <h2>Unordered List (ul)</h2>
+        <ul>
+            <!-- List Item 1-->
+            <li>Item 1: Banana</li>
+
+            <!-- List Item 2-->
+            <li>Item 2: Orange</li>
+
+            <!-- List Item 3-->
+            <li>Item 3: Stawberry</li>
+        </ul>
+
+        <p> This is an example of unordered list using the <code>&lt;ul&gt;</code> tag. Each list item is represented by the <code>&lt;li&gt;</code> tag. </p>
+
+<!-- Odered List-->
+        <h1 class="header">  Ordered List (ol)</h1>
+        <ol>
+            <!-- List Item 1-->
+            <li>Item 1: Learn HTML</li>
+
+            <!-- List Item 2-->
+            <li>Item 2: Practice CSS</li>
+
+            <!-- List Item 3-->
+            <li>Item 3: Eat good foods</li>
+        </ol>
+
+        <p> This is an example of ordered list using the <code>&lt;ol&gt;</code> tag. The numbering is automatically generated</p>
+        
+        <!-- Description List List-->
+        <h1 class="header"> Description List (dl, dt, dd)</h1>
+        <dl>
+            <!-- Description Term and Description-->
+            <dt>Item 1: Learn HTML</dt>
+            <dd>HTML is is the foundation</dd>
+
+            <!-- List Item 2-->
+            <dt>Item 2: Learn CSS</dt>
+            <dd>CSS is to modify the style </dd>
+
+            <!-- List Item 3-->
+            <dt>Item 3:Having a good food</dt>
+            <dd> Have Nasi Mandi as a Dinner</dd>
+
+        </dl>
+
+        <p> This is an example of unordered list using the <code>&lt;dd&gt;</code> (description) tag</p>
+
+</body>
+
+</html>

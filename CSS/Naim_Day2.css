@@ -1,0 +1,13 @@
+h1 {
+    font-family: 'Arial', sans-serif; 
+    font-weight: bold; 
+    text-align: center; 
+    border-bottom: 2px solid black; 
+}
+
+p {
+    color: #333333; 
+    font-size: 31px;
+    line-height: 1.5; 
+    letter-spacing: 0.5px; 
+}

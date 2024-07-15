@@ -1,0 +1,24 @@
+# Check Python version
+python --version
+
+# Create a virtual environment
+python -m venv env
+
+# Activate the virtual environment
+.\env\Scripts\Activate
+
+# Install packages (example: requests)
+pip install requests
+
+# Deactivate the virtual environment when done
+deactivate
+
+pip install mysql.connector
+
+naim
+AbcPassword123
+
+
+virtual machine
+root
+new_password

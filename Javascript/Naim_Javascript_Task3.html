@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Sequence Generator</title>
+</head>
+<body>
+
+<h2>Fibonacci Sequence Generator</h2>
+
+<label for="numTerms">Enter number of terms:</label>
+<input type="number" id="numTerms">
+<button onclick="generate()">Generate</button>
+
+
+
+<script>
+function generate() {
+    let numTerms = document.getElementById("numTerms").value;
+    let sequence = [0, 1]; 
+
+    for (let i = 2; i < numTerms; i++) {
+        sequence.push(sequence[i - 1] + sequence[i - 2]);
+    }
+
+    
+
+}
+</script>
+
+</body>
+</html>

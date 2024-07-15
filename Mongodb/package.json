@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "composer": "^4.1.0",
+    "mongodb": "^6.6.0"
+  }
+}

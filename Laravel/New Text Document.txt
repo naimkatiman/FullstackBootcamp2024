@@ -1,0 +1,19 @@
+composer require laravel/ui
+
+npm
+
+php artisan ui bootsrap --auth
+
+npm run dev
+
+npm run build
+
+php artisan make:seeder RoleesAndPermissions
+
+php artisan route:list
+
+php artisan serve
+
+in .env to because we are using laravel ver 11, we need to change from SESSION_DRIVER=database to SESSION_DRIVER=file
+
+php artisan make:controller

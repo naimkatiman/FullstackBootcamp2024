@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gordon Ramsey's Cooking Secrets Revealed</title>
+    <link rel="stylesheet" href="Naim_Day4_Evening_Assignment.css">
+</head>
+
+<style>
+
+
+</style>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="menu-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <main>
+        <h1>Gordon Ramsey's Masterclass Review</h1>
+        <picture>
+            <source media="(max-width: 100px)" srcset="tortoise.png">
+            <source media="(min-width: 100px)" srcset="tortoise.png">
+            <img src="tortoise.png" alt="Thumb's up from a tortoise" class="resized-image">
+          </picture>
+
+    </main>    
+        <article>
+            
+            <section>
+                <h3>Introduction to Gordon Ramsay</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com//embed/9Ssc4Z--H48" title="Introduction Video"></iframe>
+                
+                <h3>Inside the Masterclass</h3>
+                <iframe width="560" height="315" src="https://youtube.com//embed/Dt3vNIHntJY" title="Insider Video"></iframe>
+
+                <h3>Cooking Tips and Recipes</h3>
+                <iframe width="560" height="315" src="https://youtube.com//embed/BHcyuzXRqLs" title="Tips and Recipe"></iframe>
+
+            </section>
+                <div class="form-container">
+                <form action="/subscribe" method="post" onsubmit="return validateForm()">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" minlength="8" required>
+        
+                    <button type="submit-btn">Subscribe</button>
+        
+                </form>
+                </div>
+        
+                <script>
+                    function validateForm(){
+                        var email = document.getElementById("email").values;
+                        var password = document.getElementById("password").values;
+        
+                        if(!email.includes("@")){
+                            alert("Please enter a valid email address")
+                            return false;
+        
+                        }
+                        if(password.length < 8){
+                            alert("Password must be at least 8 characters long.")
+                            return false;
+                            
+                        }
+                    }
+                </script>
+
+
+        </article>
+
+
+    <footer>
+        <p>&copy; 2024 All Right Reserved</p>
+    </footer>
+</body>
+</html>

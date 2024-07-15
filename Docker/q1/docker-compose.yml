@@ -1,0 +1,37 @@
+version: '3.7'
+
+services:
+  db:
+    image: mongo:3
+    container_name: mongo-db
+    ports:
+      - "27017:27017"
+    networks:
+      - backend
+
+  web:
+    image: node:6.9.1
+    container_name: node-web
+    working_dir: /usr/src/app
+    volumes:
+      - ./:/usr/src/app
+    command: sh -c "npm install && npm start"
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    networks:
+      - backend
+
+  test:
+    image: appropriate/curl
+    container_name: curl-test
+    depends_on:
+      - web
+    networks:
+      - backend
+    command: ["sh", "-c", "curl -s web:3000"]
+
+networks:
+  backend:
+    driver: bridge

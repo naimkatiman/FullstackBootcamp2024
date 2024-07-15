@@ -1,0 +1,84 @@
+CREATE DATABASE eCommerce1;
+
+CREATE TABLE SALESMAN (
+  SALESMAN_ID INT PRIMARY KEY NOT NULL,
+  NAME VARCHAR(50) NOT NULL,
+  CITY VARCHAR(50) NOT NULL,
+  COMMISSION DECIMAL(10, 2)
+);
+
+
+CREATE TABLE CUSTOMER (
+  CUSTOMER_ID INT PRIMARY KEY NOT NULL,
+  CUSTOMER_NAME VARCHAR(50) NOT NULL,
+  CITY VARCHAR(50) NOT NULL,
+  GRADE INT,
+  SALESMAN_ID INT,
+  FOREIGN KEY (SALESMAN_ID) REFERENCES SALESMAN(SALESMAN_ID)
+);
+
+
+CREATE TABLE ORDERS (
+  ORDER_NO INT PRIMARY KEY NOT NULL,
+  PURCH_AMT DECIMAL(10, 2),
+  ORDER_DATE DATE,
+  CUSTOMER_ID INT,
+  SALESMAN_ID INT,
+  FOREIGN KEY (CUSTOMER_ID) REFERENCES CUSTOMER(CUSTOMER_ID),
+  FOREIGN KEY (SALESMAN_ID) REFERENCES SALESMAN(SALESMAN_ID)
+);
+
+INSERT INTO SALESMAN (SALESMAN_ID, NAME, CITY, COMMISSION) VALUES
+(5001, 'James Hoog', 'New York', 0.15),
+(5002, 'Nail Knite', 'Paris', 0.13),
+(5005, 'Pit Alex', 'London', 0.11),
+(5006, 'Mc Lyon', 'Paris', 0.14),
+(5003, 'Lauson Hen', 'New York', 0.12),
+(5007, 'Paul Adam', 'Rome', 0.13);
+
+
+INSERT INTO CUSTOMER (CUSTOMER_ID, CUSTOMER_NAME, CITY, GRADE, SALESMAN_ID) VALUES
+(3002, 'Nick Rimando', 'New York', 100, 5001),
+(3005, 'Graham Zusi', 'California', 200, 5002),
+(3001, 'Brad Guzan', 'London', 100, 5005),
+(3004, 'Fabian Johns', 'Paris', 300, 5006),
+(3007, 'Brad Davis', 'New York', 200, 5001),
+(3009, 'Geoff Cameron', 'Berlin', 100, 5002),
+(3008, 'Julian Green', 'London', 300, 5002),
+(3003, 'Jozy Altidor', 'Moscow', 200, 5007);
+
+
+INSERT INTO ORDERS (ORDER_NO, PURCH_AMT, ORDER_DATE, CUSTOMER_ID, SALESMAN_ID) VALUES
+(70001, 150.50, '2016-10-05', 3005, 5002),
+(70009, 270.65, '2016-09-10', 3001, 5002),
+(70002, 65.26, '2016-10-05', 3002, 5001),
+(70004, 110.50, '2016-08-17', 3009, 5002),
+(70007, 948.50, '2016-09-10', 3005, 5002),
+(70005, 2400.60, '2016-07-27', 3007, 5001),
+(70008, 5760, '2016-09-10', 3002, 5001),
+(70010, 1983.43, '2016-10-10', 3004, 5006),
+(70003, 2480.40, '2016-10-10', 3009, 5002),
+(70012, 250.45, '2016-06-27', 3008, 5002),
+(70011, 75.29, '2016-08-17', 3003, 5007);
+
+/*Q4: Display name and commission for all the salesmen.*/
+SELECT NAME, COMMISSION FROM SALESMAN;
+
+/*Q5: Display names and city of salesman, who belongs to the city of Paris*/
+SELECT NAME, CITY FROM SALESMAN WHERE CITY = 'Paris';
+
+/*Q6: Display all the information for those customers with a grade of 200.*/
+SELECT * FROM CUSTOMER WHERE GRADE = 200;
+
+/*Q7: Display the order number, order date and the purchase amount for order(s) which will be delivered by the salesman with ID 5001*/
+SELECT ORDER_NO, ORDER_DATE, PURCH_AMT FROM ORDERS WHERE SALESMAN_ID = 5001;
+
+/*Q8: Find the total purchase amount of all orders*/
+SELECT SUM(PURCH_AMT) AS Total_Purchase_Amount FROM ORDERS;
+
+/*Q9: Find the names of all customers along with the salesmen who works for them. USE LIKE*/
+SELECT C.CUSTOMER_NAME, S.NAME AS SALESMAN_NAME
+FROM CUSTOMER C
+JOIN SALESMAN S ON C.SALESMAN_ID = S.SALESMAN_ID;
+
+

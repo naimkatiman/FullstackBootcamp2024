@@ -1,0 +1,36 @@
+{
+    "_id": ObjectId("5f1a76b6c8acc14a7a8334cd"),
+    "name": "Nurul binti Kamarudin",
+    "email": "nurul.kamarudin@gmail.com",
+    "age": 22,
+    "course": "Biology"
+  }
+  {
+    "_id": ObjectId("5f1a76b6c8acc14a7a8334ce"),
+    "name": "Faris bin Harun",
+    "email": "faris.harun@gmail.com",
+    "age": 20,
+    "course": "History"
+  }
+  {
+    "_id": ObjectId("5f1a76b6c8acc14a7a8334cf"),
+    "name": "Ahmad bin Zulkifli",
+    "email": "ahmad.zulkifli@gmail.com",
+    "age": 23,
+    "course": "Computer Science"
+  }
+  {
+    "_id": ObjectId("5f1a76b6c8acc14a7a8334d0"),
+    "name": "Siti binti Jamal",
+    "email": "siti.jamal@gmail.com",
+    "age": 21,
+    "course": "Physics"
+  }
+  {
+    "_id": ObjectId("5f1a76b6c8acc14a7a8334d1"),
+    "name": "Ismail bin Kadir",
+    "email": "ismail.kadir@gmail.com",
+    "age": 22,
+    "course": "Mathematics"
+  }
+  

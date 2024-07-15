@@ -1,0 +1,27 @@
+git clone https://github.com/docker/welcome-to-docker.git
+
+docker run -d -p 8088:80 tomcat
+
+docker ps/docker container ls
+
+curl localhost:8088
+
+docker run -it --name my-python-container python:latest
+
+>>>(python)...exit ctrl+D
+
+docker run -it -d --name my-first-container myschema
+
+docker exec -it my-first-container mysql -u root -p
+
+cat Dockerfile (see what inside the folder)
+
+cat myschema.sql (file)
+
+docker image ls
+
+docker images (show images available)
+
+docker-compose up
+
+docker container ls

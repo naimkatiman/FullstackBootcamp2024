@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forms</title>
+    </head>
+    <body>
+        <form action="/submit" method="post">
+            <fieldset>
+                <legend>Contact Information</legend>
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email" required placeholder="Enter your Email">
+                
+                <label for="phone">Phone: </label>
+                <input type="tel" id="phone" name="phone" required>
+            
+            </fieldset>
+
+            <fieldset>
+                <legend>Appointment Details</legend>
+                <label for="date">Date: </label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Time: </label>
+                <input type="time" id="time" name="time" required>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Rating</legend>
+                <label for="rating">Rate our service (1-5) </label>
+                <input type="range" id="rating" name="rating" min="1" max="5" required>
+                <output for="rating">3</output>
+
+            </fieldset>
+
+            <button type="submit">Submit</button>
+        </form>
+        <!-- Corrected Async Attribute -->
+        <script async src="yourscript.js"></script>
+        <!-- Corrected Defer attribute -->
+        <script defer src="yourscript.js"></script>
+    </body>
+</html>

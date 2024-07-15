@@ -1,0 +1,33 @@
+cd
+
+cd .. (return)
+
+git config --list
+
+git clone https://github.com/ElijahLawal-7/agile-final-project.git
+
+git status
+
+git add .
+
+git commit -m "edit21.6"
+
+git push origin main
+
+git pull origin
+
+git branch <new-branch-name> (Create a new branch)
+
+git checkout <branch-name> (Switch to a different branch)
+
+git merge <branch-name> (Merge a branch into the current branch)
+
+git log
+
+git revert <commit-hash> (Revert changes)
+
+git reset <file-name> (Remove files from the staging area)
+
+git reset (remove all files)
+
+

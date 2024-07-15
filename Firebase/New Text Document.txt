@@ -1,0 +1,9 @@
+npm install -g firebase
+
+firebase init /hosting (to install firebase.json)
+
+cat firebase.json (to show the script) 
+
+firebase deploy
+
+npm run build (to run react)

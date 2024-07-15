@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flexibox Example</title>
+    </head>
+
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+
+        }
+
+        .flex-container{
+            display: flex; /*Declares this as flex containers*/
+            justify-content: space-around; /*Distributes flex items with equal space around them horizontally*/
+            align-items: center; /*Centres the flex items vertically*/
+            width: 80%; 
+            max-width: 1200px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px; /*Rounds off the edge*/
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .flex-item{
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+    <body>
+        <div class="flex-container">
+            <h2>Item 1</h2>
+            <p>This is the content of item 1</p>
+        </div>
+
+        <div class="flex-container">
+            <h2>Item 2</h2>
+            <p>This is the content of item 2</p>
+        </div>
+
+        <div class="flex-container">
+            <h2>Item 3</h2>
+            <p>This is the content of item 3</p>
+        </div>
+        
+    
+    </body>

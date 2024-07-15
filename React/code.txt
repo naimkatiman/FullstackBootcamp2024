@@ -1,0 +1,474 @@
+REACT rfce 
+
+import React, {useState} from "react";
+
+function App() {
+  //hooks
+  const [press, setPress] = useState(0);
+
+  return (
+    <div>
+      <h1>You click the button {press} times</h1>
+      <button onClick={()=>setPress(press +1)}>Click me</button>
+      
+    </div>
+  );
+}
+
+export default App;
+
+...........
+
+
+import React, { useState } from "react";
+
+function App() {
+  //hooks
+  const initialCount = 0;
+  const [count, setCount] = useState(initialCount); 
+
+  const incrementFive = () => {
+    for (let i = 0; i < 5; i++) {
+      setCount(prevCount => prevCount + 1)
+    }
+
+  }
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={() => setCount(initialCount)}>Reset</button>
+      <button onClick={() => setCount(prevCount => prevCount + 1)}>increment</button>
+      <button onClick={() => setCount(prevCount => prevCount - 1)}>decrement</button>
+      <button onClick={incrementFive}>increment 5</button>
+
+
+    </div>
+  );
+}
+
+export default App;
+
+.....
+
+
+import React, { useEffect, useState } from "react";
+
+
+function App() {
+  // Hooks
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    
+    document.title = `You clicked button ${count} times`;
+  }, [count]);
+
+  return (
+    <div>
+      <h1>You clicked the button {count} times</h1>
+    
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  );
+}
+
+export default App;
+
+....
+
+import React, { useEffect, useState } from "react";
+
+function App() {
+  // Hooks
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data);
+      })
+      .catch((e) => {
+        console.log("There is something wrong");
+      });
+  }, []); // Don't forget to add an empty dependency array here to run the effect only once on mount
+
+  // JSX to return
+  return (
+    <div>
+      <h1>List of all the items</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>price</th>
+            <th>description</th>
+            <th>category</th>
+            <th>image</th>
+            <th colSpan={2}>rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((ecom) => (
+            <tr key={ecom.id}> {/* Added key prop */}
+              <td>{ecom.id}</td>
+              <td>{ecom.title}</td>
+              <td>{ecom.price}</td>
+              <td>{ecom.description}</td>
+              <td>{ecom.category}</td>
+              <td><img src={ecom.image} alt={ecom.title} style={{width: "30px"}} /></td>
+              <td>{ecom.rating.rate}</td>
+              <td>{ecom.rating.count}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default App;
+
+.....
+
+import React from 'react'
+import Ecom from './Ecom'
+
+function App() {
+    const name = "this is our 2nd day of react js lecture"
+
+    // passing function to another component
+    const check = () => {
+        alert("button clicked")
+    }
+
+    return (
+        <div>
+            <Ecom names={name} chk={check} />
+        </div>
+    )
+}
+
+export default App
+
+....
+
+import React from 'react';
+
+function Ecom({ names, chk }) {
+  return (
+    <div>
+      <h2>{names}</h2>
+      <button onClick={chk}>Click Me</button>
+    </div>
+  );
+}
+
+export default Ecom;
+........
+
+
+
+import React from 'react'
+import Child from './Child'
+
+function App() {
+  //function to handle data received from
+  function getData(data) {
+    console.log(data) // printin output result
+  }
+
+
+
+  return (
+    <div>
+      <Child getData={getData} />
+    </div>
+  )
+}
+
+export default App
+.......
+
+
+
+
+import React, { useState } from 'react';
+
+function Child(props) {
+  // State to store the value entered by the user in the input field
+  const [name, setName] = useState('');
+
+  // Function to handle form submission
+  function handleSubmit(e) {
+    // Prevent the default form submission behavior
+    e.preventDefault();
+
+    // Call the getData function passed as a prop with the argument
+    props.getData(name);
+  }
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input
+          type='text'
+          value={name}
+          onChange={(e) => setName(e.target.value)} 
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default Child;
+.......
+
+
+import React, { useState } from 'react'
+function App() {
+  // hook for holding all the tasks
+  const [todos, setTodos] = useState([]);
+  //hook for getting all the data from input field
+  const [newtodo, setNewTodo] = useState();
+  function Addtodo() {
+    let newtodos = [...todos, { todo: newtodo.trim() }]
+    setTodos(newtodos);
+    setNewTodo("");
+    //  console.log(newtodos)
+  }
+  return (
+    <div>
+      {/* task managemnt app */}
+      <center>
+        <h1>Enter your tasks</h1>
+        <input type='text' value={newtodo} onChange={(e) => setNewTodo(e.target.value)} />
+        <button onClick={Addtodo}>Save task</button>
+      </center>
+      <br />
+      <hr />
+      <table>
+        <tr>
+          <th>All tasks</th>
+        </tr>
+        {
+          todos.map((tod) => (
+            <tr>
+              <td>{tod.todo}</td>
+            </tr>
+          ))
+        }
+      </table>
+    </div>
+  )
+}
+export default App
+......
+
+
+import React, { useState } from 'react';
+
+function App() {
+  // hook for holding all the tasks
+  const [todos, setTodos] = useState([]);
+
+  // hook for getting all the data from input field
+  const [newTodo, setNewTodo] = useState(""); 
+
+  function Addtodo() {
+    let newtodos = [...todos, { todo: newTodo.trim() }];
+    setTodos(newtodos);
+    setNewTodo(""); 
+  }
+
+  function deleteTodo(batal) {
+    const filteredTodos = todos.filter((_, batal) => batal !== batal);
+    setTodos(filteredTodos);
+}
+  return (
+    <div>
+      <center>
+        <h1>Enter your tasks</h1>
+        <input 
+          type="text" 
+          value={newTodo} 
+          onChange={(e) => setNewTodo(e.target.value)} 
+        />
+        <button onClick={Addtodo}>Save task</button>
+      </center>
+      <br />
+      <hr />
+      <ul>
+        {todos.map((tod, batal) => (
+          <li key={batal}>
+            {tod.todo}
+            
+            <button onClick={() => deleteTodo(batal)}>Delete Task</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
+......
+
+
+import React, { useEffect, useState } from 'react';
+
+function App() {
+  const [time, setTime] = useState(0);
+  const [running, setRunning] = useState(false);
+
+  useEffect(() => {
+    let interval; // variable to store the interval ID
+    //effect to handle the stopwatch functionality
+    if (running) {
+      interval = setInterval(() => {
+        setTime((prevTime) => prevTime + 10); // increment the time by 10 milliseconds
+      }, 10); // update time every 10 milliseconds
+    } else if (!running) {
+      clearInterval(interval); // clear the interval to stop updating the time
+    }
+    // clean up function to clear the interval when the running state changes
+    return () => clearInterval(interval); 
+  }, [running]); // run the effect whenever the running state changes
+
+  return (
+    <div>
+      
+      <div style={{ textAlign: "center" }}> 
+        <h1>Stopwatch</h1>
+        <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
+        <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
+        <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
+      </div>
+      <div style={{ textAlign: "center" }}> 
+        
+        {running ? (
+          <button onClick={() => setRunning(false)}>Stop</button>
+        ) : (
+          <button onClick={() => setRunning(true)}>Start</button>
+        )}
+        <button onClick={() => setTime(0)}>Reset</button>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+......
+
+
+// App.js
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
+  return (
+    <div className={`app ${theme}`}>
+      <h1>{theme === 'light' ? 'Light Mode' : 'Dark Mode'}</h1>
+      <button onClick={toggleTheme}>Toggle mode</button>
+      <h1>Wassap?</h1>
+      <h1>Wassap?</h1>
+      <h1>Wassap?</h1>
+      <h1>Wassap?</h1>
+    </div>
+  );
+}
+
+export default App;
+....
+
+
+.light {
+  background-color: white;
+  color: black;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+........
+
+import React, { useState, useEffect } from 'react';
+import './App.css'; // Assuming you'll use App.css for styling
+
+function App() {
+  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || []);
+  const [newTask, setNewTask] = useState({ name: '', description: '', deadline: '' });
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
+
+  const addTask = (e) => {
+    e.preventDefault();
+    if (!newTask.name || !newTask.description || !newTask.deadline) return;
+    setTasks([...tasks, { ...newTask, id: Date.now(), completed: false }]);
+    setNewTask({ name: '', description: '', deadline: '' });
+  };
+
+  const deleteTask = (id) => {
+    setTasks(tasks.filter(task => task.id !== id));
+  };
+
+  const toggleCompleted = (id) => {
+    setTasks(tasks.map(task => task.id === id ? { ...task, completed: !task.completed } : task));
+  };
+
+  return (
+    <div className="App">
+      <h1>Task Manager</h1>
+      <form onSubmit={addTask}>
+        <input
+          type="text"
+          placeholder="Task Name"
+          value={newTask.name}
+          onChange={(e) => setNewTask({ ...newTask, name: e.target.value })}
+        />
+        <textarea
+          placeholder="Description"
+          value={newTask.description}
+          onChange={(e) => setNewTask({ ...newTask, description: e.target.value })}
+        />
+        <input
+          type="date"
+          value={newTask.deadline}
+          onChange={(e) => setNewTask({ ...newTask, deadline: e.target.value })}
+        />
+        <button type="submit">Add Task</button>
+      </form>
+      <div className="task-list">
+        {tasks.map(task => (
+          <div key={task.id} className={`task ${task.completed ? 'completed' : ''}`}>
+            <h3>{task.name}</h3>
+            <p>{task.description}</p>
+            <p>Deadline: {task.deadline}</p>
+            <input
+              type="checkbox"
+              checked={task.completed}
+              onChange={() => toggleCompleted(task.id)}
+            />
+            <button onClick={() => deleteTask(task.id)}>Delete</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default App;
+

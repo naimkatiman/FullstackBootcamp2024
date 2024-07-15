@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Course</title>
+</head>
+
+<body>
+    <form>
+        <label> Enter your nationality</label>
+        <input type="text" id="a1">
+        <br>
+        <label></label> Enter your age</label>
+        <input type="text" id="a2">
+        <br>
+        <button onclick="check()">Check</button>
+    </form>
+
+<script>
+   function check(){
+   let nation, age;
+   nation = document.getElementById("a1").value;
+   age = document.getElementById("a2").value;
+   if(nation=== "Malaysian" && age>=18){
+    alert("You are eligible to give vote")
+   }else{
+    alert("You are not eligible to give vote")
+
+   } 
+   }
+
+</script>
+
+</body>
+</html>
