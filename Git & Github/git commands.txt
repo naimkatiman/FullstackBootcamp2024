@@ -1,0 +1,23 @@
+git config --global user.name "your name"
+git config --global user.email "your email"
+git status -> to check the status
+git init -> it will make a .git folder
+git add . -> add all files into staging area
+git commit -m -> add text1.txt
+git log -> to check the hitsory
+touch file name -> to create a new file
+pwd -> present working directory
+Ls -> shows list
+cd -> change directory
+rm -rf .git -> to delete files
+git rm filename -> to delete specific files
+git rm --cached filename -> if u want to remove the file from staging area
+git remote  add origin path
+git push -u origin master
+git branch branchName -> to create a new branch
+git checkout branchName -> to switch the branches
+git push -u origin branchName  -> to push the branch to repository
+git merge branchName -> to merge the branch with master branch
+git branch -d branchName -> to delete the branch
+git push origin --delete branchName -> to delete the branch from the repo.
+git clone -> to get the code from the github
